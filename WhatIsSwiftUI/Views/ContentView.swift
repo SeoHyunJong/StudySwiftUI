@@ -17,7 +17,5 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
             .environmentObject(ModelData())
-        //ContentView의 서브뷰 LandmarkList에서 EnvironmentObject 프로퍼티 래퍼를
-        //사용하고 있기 때문에 마찬가지로 이 modifier를 넣어준다.
     }
 }
