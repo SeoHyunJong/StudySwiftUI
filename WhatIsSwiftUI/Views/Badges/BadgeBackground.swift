@@ -12,6 +12,7 @@ struct BadgeBackground: View {
         //Path: 2차원 도형의 윤곽선. 내가 이해하기로는... 개발자가 커스텀 도형을
         //그릴 수 있도록 제공하는 일종의 가상의 펜이다.
         //GeometryReager: 부모 레이아웃에 맞는 preferred size를 return한다.
+        //따라서 size를 하드코딩하지 않고도 여러 기기에서 범용적으로 사용할 수 있게 한다.
         GeometryReader { geometry in
             Path { path in
                 var width: CGFloat = min(geometry.size.width, geometry.size.height)

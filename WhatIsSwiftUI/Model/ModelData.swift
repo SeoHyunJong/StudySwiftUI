@@ -11,6 +11,7 @@ import Combine
 
 final class ModelData: ObservableObject { //final: subclass가 오버라이드하는 것을 방지. 얘같은 경우엔 얘를 가지고 상속이 불가능함.
     @Published var landmarks: [Landmark] = load("landmarkData.json")
+    var hikes: [Hike] = load("hikeData.json") //값을 변경하지 않기 때문에 @Published 가 붙지 않는다.
 }
 
 func load<T: Decodable>(_ filename: String) -> T {

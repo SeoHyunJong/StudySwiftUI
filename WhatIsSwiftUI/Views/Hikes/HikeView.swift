@@ -26,12 +26,20 @@ struct HikeView: View {
                 Spacer()
 
                 Button {
-                    showDetail.toggle()
+                    //제공된 애니메이션에 의해 재연산된 뷰바디를 return
+                    //이걸 써주니까 화살표가 갑자기 돌아간다...?
+                    //그리고 HikeDetail이 자연스럽게 잘 나온다.
+                    //급 개념혼동. 클로저에 대한 이해가 필요. in은 무엇인가?
+                    //어째서 VStack이라는 구조체 내에서 여러 구조체들을 스택처럼 넣을 수 있는가?
+                    withAnimation {
+                        showDetail.toggle()
+                    }
                 } label: {
                     Label("Graph", systemImage: "chevron.right.circle")
                         .labelStyle(.iconOnly)
                         .imageScale(.large)
                         .rotationEffect(.degrees(showDetail ? 90 : 0))
+                        .scaleEffect(showDetail ? 1.5 : 1)
                         .padding()
                 }
             }
