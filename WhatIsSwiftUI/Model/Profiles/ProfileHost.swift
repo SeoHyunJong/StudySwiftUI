@@ -22,7 +22,8 @@ struct ProfileHost: View {
                     }
                 }
                 Spacer()
-                EditButton() //이 EditButton이 editMode 변수를 컨트롤할 수 있다.
+                EditButton()
+                //SwiftUI에 내장된 함수로 버튼을 누르면 자동으로 edit mode 환경 변수를 자동으로 토글한다.
             }
             
             if editMode?.wrappedValue == .inactive {
