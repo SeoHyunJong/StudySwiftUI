@@ -16,6 +16,15 @@ struct Landmark: Hashable, Codable, Identifiable {
     var state: String
     var description: String
     var isFavorite: Bool
+    var isFeatured: Bool // 추천
+    
+    var category: Category //json파일내에 있는 category가 rawValue와 매칭되어서 열거형 타입이 정해지나보다...
+    //이게 가능한 이유.. Codable 프로토콜을 채택했기 때문이다.
+    enum Category: String, CaseIterable, Codable {
+        case lakes = "Lakes"
+        case rivers = "Rivers"
+        case mountains = "Mountains"
+    }
     
     private var imageName: String
     var image: Image {
